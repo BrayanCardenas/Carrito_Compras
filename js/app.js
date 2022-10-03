@@ -22,7 +22,10 @@ function cargarEventListeners() {
      })
 
      // Vaciar el carrito
-     vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+     vaciarCarritoBtn.addEventListener('click', () =>{
+          localStorage.clear()
+          vaciarCarrito()
+     });
 
 }
 
@@ -103,7 +106,7 @@ function carritoHTML() {
      });
 
      //Sincronizar con Storage
-     sincroStorage();
+     sincroStorage()
 }
 
 function sincroStorage(){
@@ -114,6 +117,6 @@ function sincroStorage(){
 function vaciarCarrito() {
      while(contenedorCarrito.firstChild) {
           contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-      }
+     }
 }
 
